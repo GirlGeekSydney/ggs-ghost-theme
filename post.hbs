@@ -1,0 +1,60 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+<div id="post" class="animated fadeIn dur-slow">
+  <article class="{{post_class}} post-full-view" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  {{! Everything inside the #post tags pulls data from the post }}
+  {{#post}}
+    {{! Everything below outputs content of the the post which has been published }}
+    <section class="row" itemprop="articleBody">  
+      <div class="col-md-10 col-md-push-2">
+        <div class="post-main">
+          <!-- Post date for mobile & multi author style -->
+          <span class="post-date blog-author-multi visible-xs visible-sm"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time></span>
+          
+          <!-- Post title -->
+          <h2 class="post-title" itemprop="name">{{{title}}}</h2>
+            
+          <!-- Post content -->
+          <div class="post-content">{{content}}</div>
+        </div>
+      </div>
+      <div class="col-md-2 col-md-pull-10 post-meta">
+        <!-- Post date for desktop & single author style -->
+        <span class="post-date blog-author-single hidden-xs hidden-sm"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM DD, YYYY"}}</time></span>
+        
+        {{#if author}}
+        <!-- Post author info -->
+        {{> post_author}}
+        {{/if}}
+        
+        {{#if tags}}
+        <!-- Post tags -->
+        <span class="post-tags">
+          <span class="post-tags-label">Posted in:</span>
+          {{#foreach tags}}
+            <span class="post-tag">{{name}}{{#if @last}}{{else}}<span class="post-tag-spacer">,</span>{{/if}}</span>
+          {{/foreach}}
+        </span>
+        {{/if}}
+        
+        <!-- Post share links -->
+        {{> post_share}}
+      </div>        
+    </section>
+  
+  {{/post}}
+  </article>
+  
+  {{! Comment form }}
+  {{> comment_form}}
+</div>
+
+<div class="content-bottom">
+  <div class="row">
+    <div class="col-md-6 col-md-push-6 text-right"><a href="#top" title="Back to the top" class="btn btn-default btn-no-bg top-link"><span class="sr-only">Back to the top </span><i class="fa fa-angle-up fa-lg"></i></a></div>
+    <div class="col-md-6 col-md-pull-6"><a href="{{@blog.url}}" title="Back to the top" class="btn btn-default btn-no-bg home-link"><i class="fa fa-angle-left fa-lg"></i> Start Page</a></div>
+  </div>
+</div>

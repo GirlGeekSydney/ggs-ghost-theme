@@ -1,0 +1,40 @@
+{{!Post item shown on index page }}
+<!-- Post ID: {{id}} -->
+<article class="{{post_class}}{{#if @first}} first{{/if}}{{#if @last}} last{{/if}}{{#if @even}} even{{else}} odd{{/if}} animated fadeIn de-02" data-post-url="{{url}}">
+  
+  <section class="row">  
+    <div class="col-md-10 col-md-push-2">
+      <div class="post-main">
+        <!-- Post date for mobile & multi author style -->
+        <span class="post-date blog-author-multi visible-xs visible-sm"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time></span>      
+        
+        <!-- Post title & content -->
+        <h2 class="post-title"><a href="{{url}}" title="View post">{{{title}}}</a></h2>
+        <div data-url="{{url}}" data-title="View post" class="post-feature-media">{{content words="100"}}</div>
+        <p class="post-excerpt post-content">{{excerpt words="30"}} <a href="{{url}}" title="View post" class="post-view-link">Continue Reading.</a></p>
+      </div>
+    </div>
+    <div class="col-md-2 col-md-pull-10 post-meta">
+      <!-- Post date for desktop & single author style -->
+      <span class="post-date blog-author-single hidden-xs hidden-sm"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM DD, YYYY"}}</time></span>
+      
+      {{#if author}}
+      <!-- Post author info -->
+      {{> post_author}}
+      {{/if}}
+      
+      {{#if tags}}
+      <!-- Post tags -->
+      <span class="post-tags">
+        <span class="post-tags-label">Posted in:</span>
+        {{#foreach tags}}
+          <span class="post-tag">{{name}}{{#if @last}}{{else}}<span class="post-tag-spacer">,</span>{{/if}}</span>
+        {{/foreach}}
+      </span>
+      {{/if}}
+      
+      <!-- Post share links -->
+      {{> post_share}}
+    </div>    
+  </section>
+</article>

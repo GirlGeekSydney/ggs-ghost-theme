@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Google+ Meta @todo - add own Google+ Username -->
+    <!-- <link rel="author" href="https://plus.google.com/[GOOGLE_PLUS_USER_ID]" /> -->
+    
+    <!-- Twitter Meta -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:site" content="{{@blog.title}}">
+    <meta property="twitter:title" content="{{@blog.title}}">
+    <meta property="twitter:description" content="{{@blog.description}}">
+    <meta property="twitter:creator" content="@creator_username">
+    <meta property="twitter:image:src" content="{{@blog.url}}{{@blog.logo}}">
+    <meta property="twitter:domain" content="{{@blog.url}}">
+    
+    <!-- Facebook Meta -->
+    <meta property="og:type" content="blog" />
+    <meta property="og:site_name" content="{{@blog.title}}" />
+    <meta property="og:description" content="{{@blog.description}}">
+    <meta property="og:image" content="{{@blog.url}}{{@blog.logo}}" />
+    <meta property="og:url" content="{{@blog.url}}" />
+    <meta property="og:title" content="{{@blog.title}}" />
+
+    {{! Styles'n'Scripts }}
+    <!-- Bootstrap CSS -->
+    <link href="{{asset "css/bootstrap.min.css"}}" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link href="{{asset "plugins/clingify/clingify.css"}}" rel="stylesheet">
+    <link href="{{asset "plugins/animate.css/animate.min.css"}}" rel="stylesheet">
+    <link href="{{asset "css/font-awesome.min.css"}}" rel="stylesheet">
+    
+    <!-- Theme style -->    
+    <link href="{{asset "css/theme-style.min.css"}}" rel="stylesheet">
+    
+    <!-- Put all your custom code/overrides here -->    
+    <link href="{{asset "css/custom-style.css"}}" rel="stylesheet">      
+    
+    <!-- Google Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,400italic,700,700italic,900italic,900,500italic,500" rel="stylesheet" type="text/css">      
+
+    <!-- Le fav and touch icons - @todo: fill with your own icons or remove, try: http://iconogen.com (unzip bundle to assets/img/favicons/) -->
+    <link rel="shortcut icon" href="{{asset "/img/favicons/favicon.ico"}}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{asset "img/favicons/apple-touch-icon.png"}}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset "img/favicons/apple-touch-icon-57x57.png"}}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset "img/favicons/apple-touch-icon-72x72.png"}}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset "img/favicons/apple-touch-icon-114x114.png"}}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset "img/favicons/apple-touch-icon-144x144.png"}}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset "img/favicons/apple-touch-icon-60x60.png"}}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset "img/favicons/apple-touch-icon-120x120.png"}}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset "img/favicons/apple-touch-icon-76x76.png"}}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset "img/favicons/apple-touch-icon-152x152.png"}}" />        
+    
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+    
+    <!--Retina.js plugin - @see: http://retinajs.com/-->
+    <script src="{{asset "plugins/retina/js/retina-1.1.0.min.js"}}"></script>
+</head>
+<!--@todo - Add Google Analytics code here then restart Ghost -->
+<body class="{{body_class}} blog-author-multi" itemscope itemtype="http://schema.org/Blog">
+  <div class="page-border-top"></div>      
+  <div class="page-wrapper">
+    <!-- @region: Header -->
+    {{> header}}
+    
+    <!-- @region: Content -->
+    <div id="content">
+      {{! Everything else gets inserted here }}
+      <main class="content-inner" role="main">
+        {{{body}}}
+      </main>
+    </div>
+    
+    <!-- @region: Footer -->
+    {{> footer}}
+  </div>
+  
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
+  
+  <!--Bootstrap Javascript -->
+  <script src="{{asset "js/bootstrap.min.js"}}"></script>
+  
+  <!--Plugins -->
+  <script src="{{asset "plugins/infinitescroll/jquery.infinitescroll.min.js"}}"></script> 
+  <script src="{{asset "plugins/fitvids.js/jquery.fitvids.js"}}"></script>  
+  <script type="text/javascript" src="{{asset "js/script.min.js"}}"></script>
+  
+  <!-- @todo: drop your Google Analytics code here -->
+  
+</body>
+</html>

@@ -1,0 +1,22 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The main content area on the homepage }}
+<!-- @region: Posts -->
+<div id="posts">
+  {{! Each post will be output using this markup }}
+  {{#foreach posts}}
+    {{> post_item}}
+  {{/foreach}} 
+</div>
+
+<div class="content-bottom">
+  {{!! After all the posts, we have the previous/next pagination links }}
+  {{pagination}}
+  
+  <div class="row">
+    <div class="col-md-12 text-right"><a href="#top" title="Back to the top" class="btn btn-default btn-no-bg top-link"><span class="sr-only">Back to the top </span><i class="fa fa-angle-up fa-lg"></i></a></div>
+  </div>  
+</div>

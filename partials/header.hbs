@@ -1,0 +1,23 @@
+  <!-- 
+  Background display options (use class="CLASS"):
+  1. .bg-stretch = stretches background to cover whole area if small or shrinks it if large image
+  2. .bg-fixed = fixes background position
+  3. .bg-norepeat = stops background repeating
+  4. .bg-center = centers the background horizontally
+  Options can be combined ie. class="bg-norepeat bg-center" although bg-stretch & bg-fixed will cancel each other out
+  -->  
+  <header id="header" class="bg-center bg-norepeat bg-stretch" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})" {{/if}}>
+    <!-- .filter class overlays the background image with primary colour -->
+    <div class="filter header-inner">
+      <!-- Blog title, description & logo -->
+      <div class="blog-branding">
+        {{#if @blog.logo}}
+        <a href="{{@blog.url}}" itemprop="url"><img src="{{@blog.logo}}" alt="{{@blog.title}} Logo" class="blog-img" itemprop="image" /></a>
+        {{/if}}
+        <h1 class="blog-title{{#if @blog.logo}} sr-only{{/if}}" itemprop="name"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        <h5 class="blog-description" itemprop="description">{{@blog.description}}</h5>
+      </div>
+      {{> _main_menu}}
+      {{> _social_media}}
+    </div>
+  </header>
