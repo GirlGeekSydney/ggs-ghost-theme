@@ -1607,7 +1607,7 @@ a {
   color: #1b81dc;
 }
 ::selection {
-  background: #ff68b4;
+  background: #440790;
   color: #fff;
 }
 h1 {
@@ -1666,7 +1666,7 @@ address i {
   margin-right: 6px;
 }
 blockquote {
-  border-left-color: #ff68b4;
+  border-left-color: #440790;
   border-width: 3px;
   margin: 1em 0;
   padding: 1.5em;
@@ -1679,7 +1679,7 @@ blockquote.pull-right,
 blockquote.text-right {
   text-align: right;
   float: none !important;
-  border-right-color: #ff68b4;
+  border-right-color: #440790;
 }
 blockquote p {
   font-style: inherit;
@@ -1763,7 +1763,7 @@ body {
   position: relative;
 }
 .page-border-top {
-  background-color: #ff68b4;
+  background-color: #440790;
   height: 3px;
   width: 100%;
   z-index: 1000;
@@ -1805,7 +1805,7 @@ body {
 #content .content-bottom {
   padding: 30px 30px 60px 30px;
   margin: 30px -30px -30px -30px;
-  background-color: #ff68b4;
+  background-color: #440790;
   color: #ffffff;
 }
 #content .content-bottom a {
@@ -1818,7 +1818,7 @@ body {
   text-decoration: none;
   background: #ffffff !important;
   border-color: #ffffff;
-  color: #ff68b4;
+  color: #440790;
 }
 #footer {
   background-color: #00034a;
@@ -1842,8 +1842,11 @@ body {
 }
 #footer .rss-feed i {
   font-size: 24px;
-  color: #ff68b4;
+  color: #c5e4f4;
   padding-left: 5px;
+}
+#footer .rss-feed:hover i {
+  color: #ffffff;
 }
 #footer .copyright {
   margin: 0.6em 0;
@@ -1987,7 +1990,7 @@ img {
   background-color: #02054b !important;
 }
 .bg-secondary {
-  background-color: #ff68b4 !important;
+  background-color: #440790 !important;
 }
 .bg-tertiary {
   background-color: #1b81dc !important;
@@ -2117,14 +2120,14 @@ body.blog-author-multi .blog-author-multi {
 }
 .post-view-link,
 .post-top-link {
-  color: #ff68b4;
+  color: #440790;
   padding: 2px 5px;
   font-weight: 600;
 }
 .post-view-link:hover,
 .post-top-link:hover {
   color: white;
-  background: #ff68b4;
+  background: #440790;
   text-decoration: none;
 }
 .pagination {
@@ -2506,8 +2509,8 @@ iframe {
 }
 .btn-secondary {
   text-shadow: none !important;
-  background-color: #ff68b4;
-  background: #ff68b4;
+  background-color: #440790;
+  background: #440790;
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   border-color: #ff4ea7 #ff4ea7 #ff0281;
